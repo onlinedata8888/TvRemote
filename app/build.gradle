@@ -43,5 +43,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // Pure-Java ADB protocol implementation -> talks to Android TV over WiFi (port 5555)
-    implementation 'com.github.cgutman:AdbLib:v1.2'
+    implementation 'com.github.cgutman:AdbLib:master-SNAPSHOT'
 }
