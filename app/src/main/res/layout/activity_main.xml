@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Connect bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <EditText
+            android:id="@+id/etIp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_ip"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:inputType="textNoSuggestions"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:background="@color/surface" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/connect"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/not_connected"
+        android:textColor="@color/text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Power / Home / Back / Menu row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnPower"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_lock_power_off"
+            android:contentDescription="Power" />
+
+        <Space android:layout_width="16dp" android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME"
+            android:background="@drawable/bg_round_button"
+            android:textColor="@color/text_primary"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp" />
+
+        <Space android:layout_width="12dp" android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:background="@drawable/bg_round_button"
+            android:textColor="@color/text_primary"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp" />
+
+        <Space android:layout_width="12dp" android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENU"
+            android:background="@drawable/bg_round_button"
+            android:textColor="@color/text_primary"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp" />
+    </LinearLayout>
+
+    <!-- D-Pad -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnUp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/arrow_up_float"
+            android:contentDescription="Up"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnLeft"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/arrow_up_float"
+            android:rotation="-90"
+            android:contentDescription="Left"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="OK"
+            android:textStyle="bold"
+            android:background="@drawable/bg_round_button"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/text_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnRight"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/arrow_up_float"
+            android:rotation="90"
+            android:contentDescription="Right"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnDown"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/arrow_up_float"
+            android:rotation="180"
+            android:contentDescription="Down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Volume + Media row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnVolDown"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_lock_silent_mode"
+            android:contentDescription="Volume down" />
+
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnMute"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:contentDescription="Mute" />
+
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnVolUp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:contentDescription="Volume up" />
+
+        <Space android:layout_width="20dp" android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnRewind"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_media_rew"
+            android:contentDescription="Rewind" />
+
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_media_play"
+            android:contentDescription="Play/Pause" />
+
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_media_ff"
+            android:contentDescription="Fast forward" />
+    </LinearLayout>
+
+    <!-- Touchpad -->
+    <com.remote.tvremote.TouchpadView
+        android:id="@+id/touchpad"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/touchpad_hint"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Mic button -->
+    <ImageButton
+        android:id="@+id/btnMic"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_mic_button"
+        android:src="@android:drawable/ic_btn_speak_now"
+        android:contentDescription="Voice command" />
+
+</LinearLayout>
+</ScrollView>
